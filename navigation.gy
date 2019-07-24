@@ -33,6 +33,11 @@ println(joe?.address?.street)
 
 cities = [:]
 
-cities['London'] = [ [name: 'john', age: 54] ]
+cities['London'] = ['john' : [ age: 54] ]
 
-println(cities['Paris'][0]['name'])
+//println(cities['London']['john']['age'])
+//println(cities['London']['joe']['age'])
+
+println(cities.getAt('Paris')?.getAt('joe')?.getAt('age'))
+println(cities.get('Paris', [:]).get('joe', [:]).get('age', -1))
+
